@@ -55,7 +55,7 @@ public class CardRender implements ICard, Comparable<CardRender> {
 		 */
 		return ret;
 	}
-
+// regénérer equals et hashcode avec IDE
 	@Override
 	public int hashCode() {
 		int ret = -99999;
