@@ -1,6 +1,6 @@
 package launcher;
 
-import model.cards.Card; 
+import model.cards.Card;
 import model.cards.Hand;
 import model.cards.Rank;
 import model.cards.Suit;
@@ -91,144 +91,165 @@ public class TestAtelier1 {
 		
 		/* Test toString() */
 		System.out.println("hand - toString() de Object : "+hand); 	// hand - toString() de Object: model.cards.Hand@15db9742
-		// Décommentez la méthode toString() de la classe Hand
-		System.out.println("hand : " + hand);	// hand : [[]] 
-		
-		
-		/* Test addCard() */
-		c1.reveale();
-		c2.reveale();
-		c3.reveale();
-		c4.reveale();
-		hand.addCard(c1);
-		System.out.println("hand : " + hand);	// hand : [[2-Carreau]] 
-		hand.addCard(c2);
-		hand.addCard(c3);
-		hand.addCard(c4);
-		System.out.println("hand : " + hand);	// hand : [[2-Carreau, Roi-Carreau, 2-Carreau, 2-Pique]] 
-	
-		
+		//Décommentez la méthode toString() de la classe Hand
+		System.out.println("hand : " + hand);	// hand : [[]]
+
+		System.out.println("\n\n\n");
+
+		 /* Test addCard() */
+		 c1.reveale();
+		 c2.reveale();
+		 c3.reveale();
+		 c4.reveale();
+		 hand.addCard(c1);
+		 System.out.println("hand : " + hand);	// hand : [[2-Carreau]]
+		 hand.addCard(c2);
+		 hand.addCard(c3);
+		 hand.addCard(c4);
+		 System.out.println("hand : " + hand);	// hand : [[2-Carreau, Roi-Carreau, 2-Carreau, 2-Pique]]
+
+
+		System.out.println("\n\n\n");
 		/* Test isEmpty(), size() */
-		System.out.println("hand.size() : " + hand.size());	// hand.size() : 4 
-		System.out.println("hand.isEmpty() : " + hand.isEmpty());	// hand.isEmpty() : false 
-		
-		
-		/* Test removeTopCard(), removeCard(), clear() */
-		hand.removeTopCard();
-		System.out.println("Après removeTopCard() : " + hand);	// Après removeTopCard() : [[Roi-Carreau, 2-Carreau, 2-Pique]] 
-		hand.removeCard(1);
-		System.out.println("Après removeCard(1) : " + hand);	// Après removeCard(1) : [[Roi-Carreau, 2-Pique]] 
-		hand.removeCard(6);
-		System.out.println("Après removeCard(6) : " + hand);	// Après removeCard(6) : [[Roi-Carreau, 2-Pique]] 
-		hand.clear();
-		System.out.println("Après clear() : " + hand);	// Après clear() : [[]] 
-		System.out.println("hand.isEmpty() : " + hand.isEmpty());	// hand.isEmpty() : true 
-		hand.removeTopCard();
-		System.out.println("Après Clear + removeTopCard() : " + hand);	// Après Clear + removeTopCard() : [[]] 
-		hand.removeCard(1);
-		System.out.println("Après Clear + removeCard(1) : " + hand);	// Après Clear + removeCard(1) : [[]] 
-		
-		
-		/* Test hideCard() */
-		hand.addCard(c1);
-		hand.addCard(c2);
-		System.out.println("hand : " + hand);	// hand : [[2-Carreau, Roi-Carreau]] 
-		hand.hideCard(0);
-		System.out.println("Après hideCard(0) : " + hand);	// Après hideCard(0) : [[?-?, Roi-Carreau]] 
-		hand.hideCard(1);
-		System.out.println("Après hideCard(1) : " + hand);	// Après hideCard(1) : [[?-?, ?-?]] 
-		hand.hideCard(6);
-		System.out.println("Après hideCard(6) : " + hand);	// Après hideCard(6) : [[?-?, ?-?]] 
+		System.out.println("hand.size() : " + hand.size());	// hand.size() : 4
+		System.out.println("hand.isEmpty() : " + hand.isEmpty());	// hand.isEmpty() : false
 
-	
-		/* Test revealedCard() */
-		hand.revealeCard(1);
-		System.out.println("Après revealeCard(1) : " + hand);	// Après revealeCard(1) : [[?-?, Roi-Carreau]] 
-		hand.revealeCard(6);
-		System.out.println("Après revealeCard(6) : " + hand);	// Après revealeCard(6) : [[?-?, Roi-Carreau]] 
-		System.out.println("Après revealeCard(0) : " + hand);	// Après revealeCard(0) : [[2-Carreau, Roi-Carreau]] 
+		System.out.println("\n\n\n");
 
-		
-		/* Test playCard() */
-		Card c5 = hand.playCard(0);	// playCard rend visible la carte et la supprime de la List
-		System.out.println("c5 : " + c5);	// c5 : 2-Carreau 
-		System.out.println("Après playCard(0) : " + hand);	// Après playCard(0) : [[Roi-Carreau]] 
-		Card c6 = hand.playCard(6);	// playCard rend visible la carte et la supprime de la List
-		System.out.println("c6 : " + c6);	// c6 : null ] 
-		System.out.println("Après playCard(6) : " + hand);	// Après playCard(6) : [[Roi-Carreau]] 
-	
-		
-		/* Tests playCard(), revealedCard(), hideCard() si List vide */
-		hand.clear();
-		Card c7 = hand.playCard(0);	
-		System.out.println("c7 : " + c7);	// c7 : null 
-		System.out.println("Après clear + playCard(0) : " + hand);	// Après clear + playCard(0) : [[]] 
-		hand.hideCard(1);
-		System.out.println("Après clear + hideCard(1) : " + hand);	// Après clear + hideCard(1) : [[]] 
-		hand.revealeCard(1);
-		System.out.println("Après clear + revealeCard(1) : " + hand);	// Après clear + revealeCard(1) : [[]]] 
-		System.out.println("Après clear + isEmpty() : " + hand.isEmpty());	// Après clear + isEmpty() : true
-		
-		
-		//////////////////////////////////
-		// Test classe Player
-		//////////////////////////////////
-		
-		System.out.println("\n\n** Test classe Player\n");
-		Player p1 = new Player("Joueur1");
-		
-		
+		 /* Test removeTopCard(), removeCard(), clear() */
+		 hand.removeTopCard();
+		 System.out.println("Après removeTopCard() : " + hand);	// Après removeTopCard() : [[Roi-Carreau, 2-Carreau, 2-Pique]]
+		 hand.removeCard(1);
+		 System.out.println("Après removeCard(1) : " + hand);	// Après removeCard(1) : [[Roi-Carreau, 2-Pique]]
+		 hand.removeCard(6);
+		 System.out.println("Après removeCard(6) : " + hand);	// Après removeCard(6) : [[Roi-Carreau, 2-Pique]]
+		 hand.clear();
+		 System.out.println("Après clear() : " + hand);	// Après clear() : [[]]
+		 System.out.println("hand.isEmpty() : " + hand.isEmpty());	// hand.isEmpty() : true
+		 hand.removeTopCard();
+		 System.out.println("Après Clear + removeTopCard() : " + hand);	// Après Clear + removeTopCard() : [[]]
+		 hand.removeCard(1);
+		 System.out.println("Après Clear + removeCard(1) : " + hand);	// Après Clear + removeCard(1) : [[]]
+
+
+		 /* Test hideCard() */
+
+		System.out.println("\n\n\n");
+		 hand.addCard(c1);
+		 hand.addCard(c2);
+		 System.out.println("hand : " + hand);	// hand : [[2-Carreau, Roi-Carreau]]
+		 hand.hideCard(0);
+		 System.out.println("Après hideCard(0) : " + hand);	// Après hideCard(0) : [[?-?, Roi-Carreau]]
+		 hand.hideCard(1);
+		 System.out.println("Après hideCard(1) : " + hand);	// Après hideCard(1) : [[?-?, ?-?]]
+		 hand.hideCard(6);
+		 System.out.println("Après hideCard(6) : " + hand);	// Après hideCard(6) : [[?-?, ?-?]]
+
+
+		 /* Test revealedCard() */
+		System.out.println("\n\n\n");
+		 hand.revealeCard(1);
+		 System.out.println("Après revealeCard(1) : " + hand);	// Après revealeCard(1) : [[?-?, Roi-Carreau]]
+		 hand.revealeCard(6);
+		 System.out.println("Après revealeCard(6) : " + hand);	// Après revealeCard(6) : [[?-?, Roi-Carreau]]
+		hand.revealeCard(0);
+		 System.out.println("Après revealeCard(0) : " + hand);	// Après revealeCard(0) : [[2-Carreau, Roi-Carreau]]
+
+
+		// /* Test playCard() */
+		System.out.println("\n\n\n");
+		 Card c5 = hand.playCard(0);	// playCard rend visible la carte et la supprime de la List
+		 System.out.println("c5 : " + c5);	// c5 : 2-Carreau
+		 System.out.println("Après playCard(0) : " + hand);	// Après playCard(0) : [[Roi-Carreau]]
+		 Card c6 = hand.playCard(6);	// playCard rend visible la carte et la supprime de la List
+		 System.out.println("c6 : " + c6);	// c6 : null ]
+		 System.out.println("Après playCard(6) : " + hand);	// Après playCard(6) : [[Roi-Carreau]]
+
+
+		// /* Tests playCard(), revealedCard(), hideCard() si List vide */
+		System.out.println("\n\n\n");
+		 hand.clear();
+		 Card c7 = hand.playCard(0);
+		 System.out.println("c7 : " + c7);	// c7 : null
+		 System.out.println("Après clear + playCard(0) : " + hand);	// Après clear + playCard(0) : [[]]
+		 hand.hideCard(1);
+		 System.out.println("Après clear + hideCard(1) : " + hand);	// Après clear + hideCard(1) : [[]]
+		 hand.revealeCard(1);
+		 System.out.println("Après clear + revealeCard(1) : " + hand);	// Après clear + revealeCard(1) : [[]]]
+		 System.out.println("Après clear + isEmpty() : " + hand.isEmpty());	// Après clear + isEmpty() : true
+
+
+		 //////////////////////////////////
+		 // Test classe Player
+		 //////////////////////////////////
+
+		System.out.println("\n\n\n");
+		 System.out.println("\n\n** Test classe Player\n");
+		 Player p1 = new Player("Joueur1");
+
+		System.out.println("\n\n\n");
 		/* Test toString(), getname() */
-		System.out.println("p1 : " + p1);	// p1 : [Joueur1 ** Hand[[]] ** trickPile[[]]] 
-		System.out.println("p1.getname() : " + p1.getName());	// p1.getname() : Joueur1
-		
-		
-		/* Test setTrickWinner() isTrickWinner(), setGameWinner() isGameWinner() */
-		p1.setTrickWinner(true);
-		System.out.println("p1.isTrickWinner() : " + p1.isTrickWinner());	// p1.isTrickWinner() : true
-		p1.setGameWinner(true);
-		System.out.println("p1.isGameWinner() : " + p1.isGameWinner());	// p1.isGameWinner() : true
-		
-	
-		/* Test addCardToHand(), addCardToTrickPile() */
-		p1.addCardToHand(c1);
-		System.out.println("p1 : " + p1);	// p1 : [Joueur1 ** Hand[[2-Carreau]] ** trickPile[[]]]
-		p1.addCardToTrickPile(c2);
-		p1.addCardToTrickPile(c4);
-		System.out.println("p1 : " + p1);	// p1 : [Joueur1 ** Hand[[2-Carreau]] ** trickPile[[Roi-Carreau, 2-Pique]]]
+		 System.out.println("p1 : " + p1);	// p1 : [Joueur1 ** Hand[[]] ** trickPile[[]]]
+		 System.out.println("p1.getname() : " + p1.getName());	// p1.getname() : Joueur1
 
-		
-		/* Test hasWonAllCards(), isHandEmpty(), isTrickPileEmpty(), isStillActive() */
-		System.out.println("p1.isHandEmpty() : " + p1.isHandEmpty());	// p1.isHandEmpty() : false
-		System.out.println("p1.isTrickPileEmpty() : " + p1.isTrickPileEmpty());	// p1.isTrickPileEmpty() : false
-		System.out.println("p1.isStillActive() : " + p1.isStillActive());	// p1.isStillActive() : true
-		System.out.println("p1.hasWonAllCards(3) : " + p1.hasWonAllCards(3));	// p1.hasWonAllCards(3) : true
-		System.out.println("p1.hasWonAllCards(6) : " + p1.hasWonAllCards(6));	// p1.hasWonAllCards(6) : false
+		System.out.println("\n\n\n");
+		 /* Test setTrickWinner() isTrickWinner(), setGameWinner() isGameWinner() */
+		 p1.setTrickWinner(true);
+		 System.out.println("p1.isTrickWinner() : " + p1.isTrickWinner());	// p1.isTrickWinner() : true
+		 p1.setGameWinner(true);
+		 System.out.println("p1.isGameWinner() : " + p1.isGameWinner());	// p1.isGameWinner() : true
 
-		
-		/* Test hideCard(), revealeCard(), playCard() */
-		p1.hideCard(0);
-		System.out.println("Après hideCard(0) : " + p1);	// Après hideCard(0) : [Joueur1 ** Hand[[?-?, Roi-Carreau, 2-Pique]] ** trickPile[[]]]
-		p1.revealeCard(0);
-		System.out.println("Après revealeCard(0) : " + p1);	// Après revealeCard(0) : [Joueur1 ** Hand[[2-Carreau, Roi-Carreau, 2-Pique]] ** trickPile[[]]]
-		Card c8 = p1.playCard(0);
-		System.out.println("Après playCard : c8 : " + c8);	// Après playCard : c8 :  2-Carreau
-		System.out.println("Après playCard(0) : " + p1);	// Après playCard(0) : [Joueur1 ** Hand[[Roi-Carreau, 2-Pique]] ** trickPile[[]]]
-		
+
+		 /* Test addCardToHand(), addCardToTrickPile() */
+		System.out.println("\n\n\n");
+		 p1.addCardToHand(c1);
+		 System.out.println("p1 : " + p1);	// p1 : [Joueur1 ** Hand[[2-Carreau]] ** trickPile[[]]]
+		 p1.addCardToTrickPile(c2);
+		 p1.addCardToTrickPile(c4);
+		 System.out.println("p1 : " + p1);	// p1 : [Joueur1 ** Hand[[2-Carreau]] ** trickPile[[Roi-Carreau, 2-Pique]]]
+
+
+		 /* Test hasWonAllCards(), isHandEmpty(), isTrickPileEmpty(), isStillActive() */
+		System.out.println("\n\n\n");
+		 System.out.println("p1.isHandEmpty() : " + p1.isHandEmpty());	// p1.isHandEmpty() : false
+		 System.out.println("p1.isTrickPileEmpty() : " + p1.isTrickPileEmpty());	// p1.isTrickPileEmpty() : false
+		 System.out.println("p1.isStillActive() : " + p1.isStillActive());	// p1.isStillActive() : true
+		 System.out.println("p1.hasWonAllCards(3) : " + p1.hasWonAllCards(3));	// p1.hasWonAllCards(3) : true
+		 System.out.println("p1.hasWonAllCards(6) : " + p1.hasWonAllCards(6));	// p1.hasWonAllCards(6) : false
+
+
+		 /* Test hideCard(), revealeCard(), playCard() */
+		System.out.println("\n\n\n");
+		 p1.hideCard(0);
+		 System.out.println("Après hideCard(0) : " + p1);	//Après hideCard(0) : [Joueur1 ** Hand[[?-?]] ** trickPile[[Roi-Carreau, 2-Pique]]]
+		 p1.revealeCard(0);
+		 System.out.println("Après revealeCard(0) : " + p1);	// Après revealeCard(0) : [Joueur1 ** Hand[[2-Carreau]] ** trickPile[[Roi-Carreau, 2-Pique]]]
+		 Card c8 = p1.playCard(0);
+		 System.out.println("Après playCard : c8 : " + c8);	// Après playCard : c8 :  2-Carreau
+		 System.out.println("Après playCard(0) : " + p1);	// Après playCard(0) : [Joueur1 ** Hand[[]] ** trickPile[[Roi-Carreau, 2-Pique]]]
+
+		System.out.println("\n\n\n");
+
+
+		p1.addCardToHand(p1.removeCardFromTrickPile(0));
+		p1.addCardToHand(p1.removeCardFromTrickPile(0));
+		// System.out.println(p1); exo mal foutu
+
+		System.out.println("\n\n\n");
+
 		/* Test removeCardFromHand(), removeCardFromTrickPile() */
 		p1.addCardToTrickPile(p1.removeCardFromHand(0));
-		System.out.println("Après removeCardFromHand(0) : " + p1);	// Après removeCardFromHand(0) : [Joueur1 ** Hand[[Roi-Carreau]] ** trickPile[[2-Pique]]]
+		System.out.println("Après removeCardFromHand(0) : " + p1);	// Après removeCardFromHand(0) : [Joueur1 ** Hand[[2-Pique]] ** trickPile[[Roi-Carreau]]]
 		p1.removeCardFromTrickPile(0);
 		System.out.println("Après removeCardFromTrickPile(0) : " + p1);	// Après removeCardFromTrickPile(0) : [Joueur1 ** Hand[[2-Pique]] ** trickPile[[]]]
-		
-		
+
+		System.out.println("\n\n\n");
 		/* Test equals(), compareTo */
 		// faites générer les méthodes equals et hashcode par votre IDE
 		System.out.println("p1.equals(new Player(\"Joueur2\") : " + p1.equals(new Player("Joueur2")));	// p1.equals(new Player("Joueur2") : false
 		System.out.println("p1.compareTo(p1) : " + p1.compareTo(p1));	// p1.compareTo(p1) : 0
 		System.out.println("new Player(\"Joueur3\").compareTo(p1) : " + new Player("Joueur3").compareTo(p1));	// new Player("Joueur3").compareTo(p1) : 2
-		
-	
+
 	}
 
 }
