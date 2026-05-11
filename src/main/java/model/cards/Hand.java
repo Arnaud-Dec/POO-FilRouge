@@ -19,34 +19,18 @@ import allShared.ICardsCollection;
  * 
  * @author francoise.perrin
  */
-public class Hand implements ICardsCollection {
+public class Hand extends AbstractCardsCollection {
 
-	private final List<Card> cards; /* ToChange Atelier2 */
-
-	/*
-	 * TODO ToChange Atelier2
-	 */
 	public Hand() {
 		super();
-		cards = new ArrayList<Card>();
 	}
 
-	/*
-	 * TODO ToChange Atelier2
-	 */
 	public Hand(Collection<Card> collection) {
-		super();
-		cards = new ArrayList<Card>(collection);
+		super(collection);
 	}
 
-	/*
-	 * TODO ToChange Atelier2
-	 */
 	public Hand(ICardsCollection iCardsCollection) {
-		super();		// TODO - à supprimer Atelier 2
-		cards = null; 	// TODO - à supprimer Atelier 2
-		//super(iCardsCollection); // TODO - à activer Atelier 2
-
+		super(iCardsCollection);
 	}
 
 	@Override
@@ -62,7 +46,9 @@ public class Hand implements ICardsCollection {
 		}
 		Card card = cards.get(0);
 		cards.remove(card);
-		return card;
+		return card;/*
+		  * TODO Atelier2
+		  */
 	}
 
 	@Override
@@ -154,21 +140,6 @@ public class Hand implements ICardsCollection {
 	}
 
 
-	@Override
-	public void sort() {
-		/*
-		 * TODO Atelier2
-		 */
-	}
-
-	@Override
-	public void sort(Comparator<Card> comparator) {
-		/*
-		 * TODO Atelier2
-		 */
-	}
-
-
 	/**
 	 * Mélange les cartes de manière aléatoire
 	 * 
@@ -176,32 +147,9 @@ public class Hand implements ICardsCollection {
 	 *  1 - en utilisant la méthode native shuffle() de la classe Collections
 	 *  2 - en utilisant la méthode swap() et un nombre aléatoire (Random)  
 	 */
-	@Override
-	 public final void shuffle() {
-		 /*
-		  * TODO Atelier2
-		  */
-	 }
 
-	 @Override
-	 public final Card max() {
-		 Card card = null;
-		 /*
-		  * TODO Atelier2
-		  */
-		 return  card;
-	 }
 
-	 @Override
-	 public final Card max(Comparator<Card> comparator) {
-		 Card card = null;
-		 /*
-		  * TODO Atelier2
-		  */
-		 return  card;
-	 }
-
-	 /*
+	/*
 	  * Illustration du Design Pattern Iterator
 	  * et des classes anonymes
 	  * 

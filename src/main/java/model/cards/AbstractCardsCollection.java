@@ -25,11 +25,44 @@ import allShared.ICardsCollection;
  * @author francoise.perrin
  */
 public abstract class AbstractCardsCollection implements ICardsCollection, Iterable<Card> {
-//
-//	/*
-//	 * TODO Atelier2
-//	 */
-//	public AbstractCardsCollection(ICardsCollection iCardsCollection) {
-//		this( ( (AbstractCardsCollection) iCardsCollection).cards);
-//	}
+
+	protected List<Card> cards;
+
+    public AbstractCardsCollection() {
+        this.cards = new ArrayList<>();
+    }
+
+    public AbstractCardsCollection(Collection<Card> collection) {
+        this.cards = new ArrayList<>(collection);
+    }
+
+    public AbstractCardsCollection(ICardsCollection iCardsCollection) {
+		this( ( (AbstractCardsCollection) iCardsCollection).cards);
+	}
+
+    @Override
+    public final void shuffle(){
+        Collections.shuffle(cards);
+    }
+
+    @Override
+    public final void sort(){
+        Collections.sort(cards);
+    }
+
+    @Override
+    public final void sort(Comparator<Card> comparator){
+        cards.sort(comparator);
+    }
+
+    @Override
+    public final Card max(Comparator<Card> comparator){
+        return Collections.max(cards, comparator);
+    }
+
+    @Override
+    public final Card max(){
+        return Collections.max(cards);
+    }
+
 }

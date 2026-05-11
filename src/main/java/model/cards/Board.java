@@ -44,12 +44,6 @@ public  class Board extends AbstractCardsCollection {
 	}
 
 	@Override
-	public void shuffle() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public Card removeTopCard() {
 		// TODO Auto-generated method stub
 		return null;
@@ -80,30 +74,6 @@ public  class Board extends AbstractCardsCollection {
 	}
 
 	@Override
-	public Card max() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Card max(Comparator<Card> comparator) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void sort() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void sort(Comparator<Card> comparator) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return false;
@@ -114,6 +84,5 @@ public  class Board extends AbstractCardsCollection {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	
 }

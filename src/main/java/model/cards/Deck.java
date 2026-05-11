@@ -1,10 +1,6 @@
 package model.cards;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 import allShared.ICardsCollection;
 
@@ -39,17 +35,16 @@ public class Deck extends AbstractCardsCollection {
 	/*
 	 *************** TODO ToChange Atelier2 ***************
 	 */
-	
-	private final List<Card> cards; 
+
 
 	public Deck() {
 		super();
-		cards = new ArrayList<Card>();
+
 	}
 	
 	public Deck(int deckSize) {
 		super();
-		cards = new ArrayList<Card>();
+
 		
 		/*
 		 * TODO Atelier2
@@ -65,13 +60,6 @@ public class Deck extends AbstractCardsCollection {
 	
 	public Deck(ICardsCollection iCardsCollection) {
 		super();
-		cards = null;
-	}
-	
-	@Override
-	public void shuffle() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -105,30 +93,6 @@ public class Deck extends AbstractCardsCollection {
 	}
 
 	@Override
-	public Card max() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Card max(Comparator<Card> comparator) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void sort() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void sort(Comparator<Card> comparator) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return false;
@@ -140,5 +104,12 @@ public class Deck extends AbstractCardsCollection {
 		return null;
 	}
 	
-	
+	@Override
+	public String toString(){
+		if (cards.isEmpty() || cards == null){
+			return "-";
+		}else {
+			return "test";
+		}
+	}
 }
