@@ -41,14 +41,18 @@ public class Deck extends AbstractCardsCollection {
 		super();
 
 	}
-	
+
 	public Deck(int deckSize) {
 		super();
+		int firstValue = deckSize == 52 ? 2 : 7;
 
-		
-		/*
-		 * TODO Atelier2
-		 */
+		for(Rank rank : Rank.values()) {
+			for(Suit suit: Suit.values()) {
+				if (rank.getRank() >= firstValue) {
+					cards.add(new Card (rank, suit));
+				}
+			}
+		}
 
 	}
 
@@ -109,7 +113,7 @@ public class Deck extends AbstractCardsCollection {
 		if (cards.isEmpty() || cards == null){
 			return "-";
 		}else {
-			return "test";
+			return cards.toString();
 		}
 	}
 }
