@@ -135,11 +135,12 @@ public class Player implements IPlayer{
 	 *  2 - en utilisant l'Iterator de manière explicite  
 	 */
 	public void addWonCardsBackToHand() {
-
-		/*
-		 * TODO Atelier2
-		 */
-		  
+		trickPile.shuffle();
+		Iterator<Card> it = trickPile.iterator();
+		while (it.hasNext()) {
+			hand.addCard(it.next());
+		}
+		trickPile.clear();
 	}
 
 	@Override
