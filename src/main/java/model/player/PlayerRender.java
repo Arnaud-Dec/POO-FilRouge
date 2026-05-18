@@ -23,10 +23,7 @@ public class PlayerRender implements IPlayer, Comparable<IPlayer> {
 	
 	@Override
 	public final String getName() {
-		String ret = null;
-		/*
-		 * TODO Atelier2
-		 */
+		String ret = player.getName();
 		return ret;
 	}
 	
@@ -60,10 +57,7 @@ public class PlayerRender implements IPlayer, Comparable<IPlayer> {
 
 	@Override
 	public String toString() {
-		String ret = null;
-		/*
-		 * TODO Atelier2
-		 */
+		String ret = getName();
 		return ret;
 	}
 
