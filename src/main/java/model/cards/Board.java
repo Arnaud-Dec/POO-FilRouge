@@ -25,25 +25,18 @@ public  class Board extends AbstractCardsCollection {
 	/*
 	 *************** TODO ToChange Atelier2 ***************
 	 */
-	
-	private final List<Card> cards; 
+
 
 	public Board() {
 		super();
-		cards = new ArrayList<Card>();
 	}
 
 	public Board(Collection<Card> collection) {
-		super();
-		cards = new ArrayList<Card>(collection);
+		super(collection);
 	}
 
 	public Board(ICardsCollection iCardsCollection) {
-		super();
-		cards = new ArrayList<Card>();
-		for (Card c : iCardsCollection) {
-			cards.add(c);
-		}
+		super(iCardsCollection);
 	}
 
 	@Override
@@ -83,8 +76,7 @@ public  class Board extends AbstractCardsCollection {
 
 	@Override
 	public Iterator<Card> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return cards.iterator();
 	}
 
 	@Override
@@ -93,7 +85,7 @@ public  class Board extends AbstractCardsCollection {
 			return "[[]]";
 		}
 		else {
-			return cards.toString();
+			return "["+cards.toString()+"]";
 		}
 	}
 	

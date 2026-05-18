@@ -57,13 +57,12 @@ public class Deck extends AbstractCardsCollection {
 	}
 
 	public Deck(Collection<Card> collection) {
-		super();
-		cards = new ArrayList<Card>(collection);
+		super(collection);
 	}
 
 	
 	public Deck(ICardsCollection iCardsCollection) {
-		super();
+		super(iCardsCollection);
 	}
 
 	@Override
@@ -104,8 +103,7 @@ public class Deck extends AbstractCardsCollection {
 
 	@Override
 	public Iterator<Card> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return cards.iterator();
 	}
 	
 	@Override
@@ -113,7 +111,7 @@ public class Deck extends AbstractCardsCollection {
 		if (cards.isEmpty() || cards == null){
 			return "-";
 		}else {
-			return cards.toString();
+			return "["+cards.toString()+"]";
 		}
 	}
 }
