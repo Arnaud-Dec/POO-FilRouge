@@ -40,7 +40,10 @@ public  class Board extends AbstractCardsCollection {
 
 	public Board(ICardsCollection iCardsCollection) {
 		super();
-		cards = null;
+		cards = new ArrayList<Card>();
+		for (Card c : iCardsCollection) {
+			cards.add(c);
+		}
 	}
 
 	@Override
@@ -51,14 +54,13 @@ public  class Board extends AbstractCardsCollection {
 
 	@Override
 	public Card removeCard(int index) {
-		// TODO Auto-generated method stub
+		cards.remove(index);
 		return null;
 	}
 
 	@Override
 	public void addCard(Card pc) {
-		// TODO Auto-generated method stub
-		
+		cards.add(pc);
 	}
 
 	@Override
@@ -83,6 +85,16 @@ public  class Board extends AbstractCardsCollection {
 	public Iterator<Card> iterator() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String toString() {
+		if (cards == null || cards.isEmpty()){
+			return "[[]]";
+		}
+		else {
+			return cards.toString();
+		}
 	}
 	
 }
