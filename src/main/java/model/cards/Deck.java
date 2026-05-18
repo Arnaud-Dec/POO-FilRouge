@@ -66,43 +66,13 @@ public class Deck extends AbstractCardsCollection {
 	}
 
 	@Override
-	public Card removeCard(int index) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void addCard(Card pc) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public Iterator<Card> iterator() {
 		return cards.iterator();
 	}
 	
 	@Override
 	public String toString(){
-		if (cards.isEmpty() || cards == null){
+		if (cards == null || cards.isEmpty()) {
 			return "-";
 		}else {
 			return "["+cards.toString()+"]";

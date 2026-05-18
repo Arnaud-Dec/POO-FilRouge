@@ -40,35 +40,6 @@ public  class Board extends AbstractCardsCollection {
 	}
 
 	@Override
-	public Card removeCard(int index) {
-		cards.remove(index);
-		return null;
-	}
-
-	@Override
-	public void addCard(Card pc) {
-		cards.add(pc);
-	}
-
-	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public Iterator<Card> iterator() {
 		return cards.iterator();
 	}

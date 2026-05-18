@@ -33,40 +33,6 @@ public class Hand extends AbstractCardsCollection {
 		super(iCardsCollection);
 	}
 
-	@Override
-	public final void addCard(Card pc) {
-		cards.add(pc);
-	}
-
-	@Override
-	public final Card removeCard(int index) {
-		if (index < 0 || index >= size()){
-			return null;
-		}
-		Card card = cards.get(index);
-		cards.remove(card);
-		return card;
-	}
-
-	@Override
-	public final boolean isEmpty() {
-		boolean ret = false;
-
-		if (size() == 0) {return true;}
-
-		return ret;
-	}
-
-	@Override
-	public final void clear() {
-		cards.clear();
-	}
-
-	@Override
-	public final int size() {
-		int ret = cards.size();
-		return ret;
-	}
 
 	@Override
 	public String toString() {

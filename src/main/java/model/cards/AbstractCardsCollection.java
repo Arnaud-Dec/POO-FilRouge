@@ -73,4 +73,35 @@ public abstract class AbstractCardsCollection implements ICardsCollection, Itera
         }
         return cards.remove(0);
     }
+
+    @Override
+    public final void clear() {
+        cards.clear();
+    }
+
+    @Override
+    public final Card removeCard(int index) {
+        if (index < 0 || index >= size()){
+            return null;
+        }
+        return cards.remove(index);
+    }
+
+    @Override
+    public final boolean isEmpty() {
+        return cards.isEmpty();
+    }
+
+    @Override
+    public final void addCard(Card pc) {
+        cards.add(pc);
+    }
+
+    @Override
+    public final int size() {
+        int ret = cards.size();
+        return ret;
+    }
+
+
 }
