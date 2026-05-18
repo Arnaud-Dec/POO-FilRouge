@@ -39,21 +39,8 @@ public class Hand extends AbstractCardsCollection {
 	}
 
 	@Override
-	public final Card removeTopCard() {
-
-		if (cards.size() ==0 ){
-			return null;
-		}
-		Card card = cards.get(0);
-		cards.remove(card);
-		return card;/*
-		  * TODO Atelier2
-		  */
-	}
-
-	@Override
 	public final Card removeCard(int index) {
-		if (index < 0 || index >= cards.size()){
+		if (index < 0 || index >= size()){
 			return null;
 		}
 		Card card = cards.get(index);

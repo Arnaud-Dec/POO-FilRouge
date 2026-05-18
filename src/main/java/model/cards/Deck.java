@@ -66,12 +66,6 @@ public class Deck extends AbstractCardsCollection {
 	}
 
 	@Override
-	public Card removeTopCard() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Card removeCard(int index) {
 		// TODO Auto-generated method stub
 		return null;

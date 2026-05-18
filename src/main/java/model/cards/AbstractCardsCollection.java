@@ -37,7 +37,7 @@ public abstract class AbstractCardsCollection implements ICardsCollection, Itera
     }
 
     public AbstractCardsCollection(ICardsCollection iCardsCollection) {
-		this( ( (AbstractCardsCollection) iCardsCollection).cards);
+		this( ( (AbstractCardsCollection) iCardsCollection).cards); // ?
 	}
 
     @Override
@@ -65,4 +65,12 @@ public abstract class AbstractCardsCollection implements ICardsCollection, Itera
         return Collections.max(cards);
     }
 
+    @Override
+    public final Card removeTopCard() {
+
+        if (cards.isEmpty() ){
+            return null;
+        }
+        return cards.remove(0);
+    }
 }

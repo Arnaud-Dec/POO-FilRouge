@@ -21,7 +21,7 @@ import allShared.ICardsCollection;
  */
 public  class Board extends AbstractCardsCollection {
 	
-	
+
 	/*
 	 *************** TODO ToChange Atelier2 ***************
 	 */
@@ -37,12 +37,6 @@ public  class Board extends AbstractCardsCollection {
 
 	public Board(ICardsCollection iCardsCollection) {
 		super(iCardsCollection);
-	}
-
-	@Override
-	public Card removeTopCard() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
