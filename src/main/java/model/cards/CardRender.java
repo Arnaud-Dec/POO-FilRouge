@@ -2,6 +2,8 @@ package model.cards;
 
 import allShared.ICard;
 
+import java.util.Objects;
+
 /**
  * Cette classe peut être vue comme un Proxy ou un Adapter [Design Pattern] de la classe Card
  * Ses instances sont utilisées par la View qui
@@ -22,64 +24,43 @@ public class CardRender implements ICard, Comparable<CardRender> {
 
 	@Override
 	public final Rank getRank() {
-		Rank ret = null;
-		/*
-		 * TODO Atelier2
-		 */
+		Rank ret = card.getRank();
 		return ret;
 	}
 
 	@Override
 	public final Suit getSuit() {
-		Suit ret = null;
-		/*
-		 * TODO Atelier2
-		 */
+		Suit ret = card.getSuit();
 		return ret;
 	}
 	
 	@Override
 	public final boolean isRevealed() {
-		boolean ret = false;
-		/*
-		 * TODO Atelier2
-		 */
+		boolean ret = card.isRevealed();
 		return ret;
 	}
 	
 	@Override
 	public int compareTo(CardRender o) {
-		int ret = -99999;
-		/*
-		 * TODO Atelier2
-		 */
-		return ret;
-	}
-// regénérer equals et hashcode avec IDE
-	@Override
-	public int hashCode() {
-		int ret = -99999;
-		/*
-		 * TODO Atelier2
-		 */
+		int ret = card.compareTo(o.card);
 		return ret;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		boolean ret = false;
-		/*
-		 * TODO Atelier2
-		 */
-		return ret;
+	public boolean equals(Object o) {
+		if (o == null || getClass() != o.getClass()) return false;
+		CardRender that = (CardRender) o;
+		return Objects.equals(card, that.card);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(card);
 	}
 
 	@Override
 	public String toString() {
-		String ret = null;
-		/*
-		 * TODO Atelier2
-		 */
+		String ret = card.toString();
 		return ret;
 	}
 }
